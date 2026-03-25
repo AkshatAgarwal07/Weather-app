@@ -1,3 +1,3 @@
 export function showLoader() {
-  return "<p>Loading...</p>";
+  return `<p style="margin-top:20px; color:#38bdf8;">Loading...</p>`;
 }

@@ -1,0 +1,77 @@
+/* Input */
+input {
+  width: 70%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin-top: 10px;
+}
+
+/* Button */
+button {
+  padding: 10px 15px;
+  margin-left: 5px;
+  border: none;
+  border-radius: 8px;
+  background: #38bdf8;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #0ea5e9;
+}
+
+/* Weather Card */
+.card {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  background: #1e293b;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+/* Temperature */
+.card h1 {
+  font-size: 40px;
+  margin: 10px 0;
+}
+
+/* Description */
+.card p {
+  color: #94a3b8;
+}
+
+/* History */
+#history {
+  margin-top: 20px;
+  list-style: none;
+}
+
+#history li {
+  padding: 8px;
+  margin: 5px 0;
+  background: #1e293b;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#history li:hover {
+  background: #334155;
+}
+.history-item {
+  cursor: pointer;
+  padding: 8px;
+  margin: 5px 0;
+  background: #1e293b;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.history-item:hover {
+  background: #334155;
+}

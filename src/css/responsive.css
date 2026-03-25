@@ -1,0 +1,13 @@
+@media (max-width: 400px) {
+  .container {
+    width: 90%;
+  }
+
+  input {
+    width: 60%;
+  }
+
+  .card h1 {
+    font-size: 32px;
+  }
+}
