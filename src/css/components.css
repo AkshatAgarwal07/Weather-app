@@ -1,11 +1,23 @@
-/* Input */
+/* Input - Modernized for Glass look */
 input {
   width: 70%;
   padding: 10px;
   border-radius: 8px;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
   outline: none;
   margin-top: 10px;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent */
+  color: white;
+  transition: 0.3s;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #38bdf8;
 }
 
 /* Button */
@@ -15,63 +27,83 @@ button {
   border: none;
   border-radius: 8px;
   background: #38bdf8;
-  color: black;
+  color: #0f172a; /* Dark text for contrast */
   font-weight: bold;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 
 button:hover {
   background: #0ea5e9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.4);
 }
 
-/* Weather Card */
+/* Weather Card - The Main Glass Element */
 .card {
   margin-top: 20px;
-  padding: 20px;
+  padding: 25px;
   border-radius: 15px;
-  background: #1e293b;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  background: rgba(255, 255, 255, 0.05); /* Very light white */
+  backdrop-filter: blur(12px); /* This creates the glass effect */
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 /* Temperature */
 .card h1 {
-  font-size: 40px;
+  font-size: 48px;
   margin: 10px 0;
+  font-weight: 300;
+  color: #fff;
 }
 
 /* Description */
 .card p {
-  color: #94a3b8;
+  color: #bae6fd; /* Light blueish tint */
+  font-size: 1.1rem;
 }
 
-/* History */
-#history {
-  margin-top: 20px;
+/* History List Items */
+#history li, .history-item {
+  padding: 12px;
+  margin: 8px 0;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  cursor: pointer;
   list-style: none;
+  transition: all 0.3s ease;
+  color: rgba(255, 255, 255, 0.8);
 }
 
-#history li {
-  padding: 8px;
-  margin: 5px 0;
-  background: #1e293b;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.2s;
+#history li:hover, .history-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  padding-left: 18px; /* Subtle slide effect */
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
-#history li:hover {
-  background: #334155;
-}
-.history-item {
-  cursor: pointer;
-  padding: 8px;
-  margin: 5px 0;
-  background: #1e293b;
-  border-radius: 8px;
-  transition: 0.2s;
+.loader-bars {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 30px;
 }
 
-.history-item:hover {
-  background: #334155;
+.loader-bars span {
+  width: 6px;
+  height: 20px;
+  background: #38bdf8;
+  animation: bounce 1s infinite ease-in-out;
+}
+
+.loader-bars span:nth-child(2) { animation-delay: 0.2s; }
+.loader-bars span:nth-child(3) { animation-delay: 0.4s; }
+.loader-bars span:nth-child(4) { animation-delay: 0.6s; }
+
+@keyframes bounce {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(2); }
 }

@@ -1,29 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather App</title>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="../src/css/main.css">
-  <link rel="stylesheet" href="../src/css/components.css">
-  <link rel="stylesheet" href="../src/css/responsive.css">
+<link rel="stylesheet" href="../src/css/variables.css">
+<link rel="stylesheet" href="../src/css/main.css">
+<link rel="stylesheet" href="../src/css/layout.css">
+<link rel="stylesheet" href="../src/css/components.css">
+<link rel="stylesheet" href="../src/css/responsive.css">
 </head>
 <body>
 
   <div class="container">
 
-    <h1>Weather App</h1>
+    <!-- Header -->
+    <header>
+      <h1>Weather App</h1>
+    </header>
 
-    <!-- Search -->
-    <input type="text" id="city" placeholder="Enter city">
-    <button id="searchBtn">Search</button>
+    <!-- Search Section -->
+    <section class="search-area">
+      <input 
+        type="text" 
+        id="city" 
+        placeholder="Enter city"
+        autocomplete="off"
+      >
+      <button id="searchBtn">Search</button>
+      <button id="unitToggle">°C / °F</button>
+    </section>
 
     <!-- Weather Output -->
-    <div id="weather"></div>
+    <main id="weather"></main>
 
-    <!-- Search History -->
-    <h3>Search History</h3>
-    <ul id="history"></ul>
+    <!-- History -->
+    <section class="history-section">
+      <h3>Recent Searches</h3>
+      <ul id="history"></ul>
+    </section>
 
   </div>
 

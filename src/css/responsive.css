@@ -1,13 +1,28 @@
-@media (max-width: 400px) {
+@media (max-width: 500px) {
+
   .container {
-    width: 90%;
+    padding: 15px;
+    border-radius: 16px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .search-area {
+    flex-direction: column;
   }
 
   input {
-    width: 60%;
+    width: 100%;
   }
 
-  .card h1 {
-    font-size: 32px;
+  button {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .forecast-container {
+    justify-content: flex-start;
   }
 }

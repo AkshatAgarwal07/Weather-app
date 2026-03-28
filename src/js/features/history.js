@@ -1,19 +1,25 @@
-import { save, load } from "../services/storageService.js";
+import { MAX_HISTORY } from "../utils/constants.js";
 
-export function addHistory(city) {
-  let history = load("history");
+const KEY = "weatherHistory";
 
-  // duplicate remove
-  history = history.filter(item => item !== city);
-
-  
-  history.unshift(city);
-
-  history = history.slice(0, 5);
-
-  save("history", history);
+// 🔹 Get history
+export function getHistory() {
+  let data = localStorage.getItem(KEY);
+  return data ? JSON.parse(data) : [];
 }
 
-export function getHistory() {
-  return load("history");
+// 🔹 Add new city
+export function addHistory(city) {
+  let history = getHistory();
+
+  // duplicate remove
+  history = history.filter(item => item.toLowerCase() !== city.toLowerCase());
+
+  // new city add at top
+  history.unshift(city);
+
+  // only last 5
+  history = history.slice(0, MAX_HISTORY);
+
+  localStorage.setItem(KEY, JSON.stringify(history));
 }
